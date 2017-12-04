@@ -17,9 +17,9 @@ INITIAL_LENGTH=8
 RECURRENCE=3
 
 function mainScript() {
-  echo "iperf3 -c ${SERVER_ADDRESS} -p ${PORT} -t ${TRANSMIT_TIME} -V -O ${OMIT_TIME} -P ${PARALLEL_NUMBER} -l ${LENGTH_BUFFER}"
+  echo "iperf3 -c ${SERVER_ADDRESS} -p ${PORT} -t ${TRANSMIT_TIME} -V -O ${OMIT_TIME} -P ${PARALLEL_NUMBER} -l ${LENGTH_BUFFER}K"
   OUTPUT_LOG=result_${PARALLEL_NUMBER}_${LENGTH_BUFFER}_`date +%y%m%d-%H%M%S`.out
-  iperf3 -c ${SERVER_ADDRESS} -p ${PORT} -t ${TRANSMIT_TIME} -V -O ${OMIT_TIME} -P ${PARALLEL_NUMBER} -l ${LENGTH_BUFFER}> ${OUTPUT_LOG}
+  iperf3 -c ${SERVER_ADDRESS} -p ${PORT} -t ${TRANSMIT_TIME} -V -O ${OMIT_TIME} -P ${PARALLEL_NUMBER} -l ${LENGTH_BUFFER}K> ${OUTPUT_LOG}
 }
 
 function callMainScript() {
